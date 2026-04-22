@@ -18,7 +18,7 @@ let index = 0;
 
 // 2. Fetch homes from backend
 fetch("http://35.175.212.12/api/getHomes.php")
-  .then(res => res.json())
+  .then(res => res.json())cd /
   .then(data => {
     homes = data;
     showHome();
