@@ -1,29 +1,80 @@
-CREATE DATABASE IF NOT EXISTS zillowlab;
-USE zillowlab;
+-- MySQL dump 10.13  Distrib 8.0.45, for Linux (x86_64)
+--
+-- Host: localhost    Database: zillowlab
+-- ------------------------------------------------------
+-- Server version	8.0.45-0ubuntu0.24.04.1
 
-DROP TABLE IF EXISTS homes;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-CREATE TABLE homes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    address VARCHAR(255) NOT NULL,
-    city VARCHAR(100) NOT NULL,
-    state CHAR(2) NOT NULL,
-    zip_code VARCHAR(10) NOT NULL,
-    price DECIMAL(10,2) NOT NULL,
-    beds INT NOT NULL,
-    baths DECIMAL(3,1) NOT NULL
-);
+--
+-- Table structure for table `homes`
+--
 
-INSERT INTO homes (address, city, state, zip_code, price, beds, baths) VALUES
-('1811 E Branch Rd', 'State College', 'PA', '16801', 329900.00, 3, 2.0),
-('221 Ellen Ave', 'State College', 'PA', '16801', 399000.00, 4, 2.0),
-('2278 Spruce Dr', 'State College', 'PA', '16801', 409000.00, 3, 3.0),
-('327 Fry Dr', 'State College', 'PA', '16801', 479000.00, 3, 2.0),
-('234 W Fairmount Ave', 'State College', 'PA', '16801', 2585000.00, 8, 9.0),
-('126 W South Hills Ave', 'State College', 'PA', '16801', 199900.00, 2, 2.0),
-('2107 Circleville Rd', 'State College', 'PA', '16803', 394000.00, 4, 3.0),
-('576 E Shadow Ln', 'State College', 'PA', '16803', 873900.00, 4, 4.0),
-('403 Keller St', 'State College', 'PA', '16801', 235000.00, 3, 2.0),
-('316 Homan Ave', 'State College', 'PA', '16801', 650000.00, 3, 3.0),
-('422 Martin Ter', 'State College', 'PA', '16803', 458000.00, 3, 2.0),
-('620 Fawn Valley Rd', 'State College', 'PA', '16803', 465000.00, 4, 3.0);
+DROP TABLE IF EXISTS `homes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `homes` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `address` varchar(255) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `state` char(2) NOT NULL,
+  `zip_code` varchar(10) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `beds` int NOT NULL,
+  `baths` decimal(3,1) NOT NULL,
+  `image_url` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `quiz_results`
+--
+
+DROP TABLE IF EXISTS `quiz_results`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `quiz_results` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `budget_max` int DEFAULT NULL,
+  `beds_min` int DEFAULT NULL,
+  `baths_min` decimal(3,1) DEFAULT NULL,
+  `preferred_city` varchar(100) DEFAULT NULL,
+  `preferred_zip` varchar(10) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `sqft_min` int DEFAULT NULL,
+  `pool` tinyint(1) DEFAULT '0',
+  `waterfront` tinyint(1) DEFAULT '0',
+  `large_yard` tinyint(1) DEFAULT '0',
+  `deck_patio` tinyint(1) DEFAULT '0',
+  `garage` tinyint(1) DEFAULT '0',
+  `fireplace` tinyint(1) DEFAULT '0',
+  `central_air` tinyint(1) DEFAULT '0',
+  `finished_basement` tinyint(1) DEFAULT '0',
+  `walkable_area` tinyint(1) DEFAULT '0',
+  `quiet_neighborhood` tinyint(1) DEFAULT '0',
+  `near_schools` tinyint(1) DEFAULT '0',
+  `pet_friendly` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2026-04-22  0:26:43
