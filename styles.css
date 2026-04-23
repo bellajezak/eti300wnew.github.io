@@ -377,6 +377,13 @@ h1-quiz {
 }
 
 /* Sliders stacked */
+.range-container {
+    position: relative;
+    width: 280px;
+    margin-bottom: 55px; /* extra room for labels above */
+}
+
+/* --- THE TRACK (this makes the bar visible again) --- */
 .range-container input[type="range"] {
     position: absolute;
     left: 0;
@@ -384,10 +391,11 @@ h1-quiz {
     pointer-events: none;
     -webkit-appearance: none;
     height: 6px;
-    background: transparent;
+    background: #d0d7e2; /* ⭐ visible bar */
+    border-radius: 5px;
 }
 
-/* Slider thumb */
+/* --- THUMB (the draggable circles) --- */
 .range-container input[type="range"]::-webkit-slider-thumb {
     pointer-events: auto;
     -webkit-appearance: none;
@@ -398,16 +406,24 @@ h1-quiz {
     cursor: pointer;
 }
 
-/* ⭐ VALUES ABOVE THE BAR */
+.range-container input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #006aff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* --- LABELS ABOVE THE BAR --- */
 .range-values {
     position: absolute;
-    top: -28px; /* moves labels above the slider */
+    top: -28px; 
     left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     font-weight: 600;
-    color: black; /* 
+    color: black; 
     pointer-events: none;
 }
 
