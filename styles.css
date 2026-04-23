@@ -29,6 +29,7 @@ h1{
     flex: 1;
     display: flex;
     justify-content: flex-end;
+    position: relative;
 }
 
 * {
@@ -81,24 +82,26 @@ body {
 }
 
 .matching-bubble-up {
+    position: absolute;
+    top: 40px;            /* distance BELOW the Home Matching link */
+    right: 0;             /* aligns under the link */
     background: #006aff;
     color: white;
-    padding: 14px 22px;
-    border-radius: 20px;
-    width: fit-content;
-    margin: 20px auto 10px auto;
+    padding: 6px 12px;    /* small */
+    border-radius: 12px;
+    font-size: 0.8rem;
     font-weight: 600;
-    position: relative;
-    text-align: center;
+    white-space: nowrap;
+    z-index: 999;         /* overlays hero */
+    pointer-events: none;
 }
 
 .matching-bubble-up::after {
     content: "";
     position: absolute;
-    top: -10px; /* pointer ABOVE the bubble */
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 10px;
+    top: -8px;            /* pointer ABOVE bubble */
+    right: 20px;          /* adjust to point at the link */
+    border-width: 8px;
     border-style: solid;
     border-color: transparent transparent #006aff transparent;
 }
