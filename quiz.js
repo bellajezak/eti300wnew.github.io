@@ -1,4 +1,4 @@
-fetch("http://44/223/40.149/api/saveQuiz.php" , {
+fetch("http://44.200.170.16/api/saveQuiz.php" , {
     method: "POST",
     headers: {
         "Content-Type": "application/json"

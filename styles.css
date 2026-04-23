@@ -370,6 +370,40 @@ h1-quiz {
     border: 1px solid #ddd;
 }
 
+.range-container {
+    position: relative;
+    width: 280px;
+    margin-bottom: 25px;
+}
+
+.range-container input[type="range"] {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    pointer-events: none; /* both sliders overlap */
+    -webkit-appearance: none;
+    height: 6px;
+    background: transparent;
+}
+
+.range-container input[type="range"]::-webkit-slider-thumb {
+    pointer-events: auto; /* allow dragging */
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #006aff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.range-values {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+    font-weight: 600;
+    color: #006aff;
+}
+
 label-quiz {
     font-weight: bold;
     display: block;
