@@ -80,6 +80,29 @@ body {
     color: white;
 }
 
+.matching-bubble-up {
+    background: #006aff;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 20px;
+    width: fit-content;
+    margin: 20px auto 10px auto;
+    font-weight: 600;
+    position: relative;
+    text-align: center;
+}
+
+.matching-bubble-up::after {
+    content: "";
+    position: absolute;
+    top: -10px; /* pointer ABOVE the bubble */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #006aff transparent;
+}
+
 .hero {
     position: relative;
     height: 500px;
