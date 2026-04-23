@@ -84,7 +84,7 @@ body {
 .matching-bubble-up {
     position: absolute;
     top: 42px;              /* sits below the link */
-    right: 70px;               /* aligns under Home Matching */
+    right: 80px;               /* aligns under Home Matching */
     background: #006aff;
     color: white;
     padding: 6px 10px;      /* smaller */
