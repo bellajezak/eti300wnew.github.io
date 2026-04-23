@@ -37,15 +37,26 @@ function showHome() {
   document.getElementById("home-location").textContent = `${home.city}, ${home.state} ${home.zip_code}`;
   // Use your hard-coded image
   document.getElementById("home-image").src = hardcodedImages[home.id];
+  document.getElementById("progress-indicator").textContent =
+    `Home ${index + 1} of ${homes.length}`;
 }
 
-// 4. Swipe buttons
-document.getElementById("like-btn").onclick = () => {
-  index = (index + 1) % homes.length;
-  showHome();
-};
+function animateCard(animationClass) {
+    const card = document.getElementById("swipe-card");
 
-document.getElementById("dislike-btn").onclick = () => {
-  index = (index + 1) % homes.length;
-  showHome();
-};
+    card.classList.add(animationClass);
+
+    setTimeout(() => {
+        card.classList.remove(animationClass);
+        index = (index + 1) % homes.length;
+        showHome();
+    }, 450); // matches spin animation duration
+}
+// 4. Swipe buttons
+document.getElementById("like-btn").addEventListener("click", () => {
+    animateCard("spin-right");
+});
+
+document.getElementById("dislike-btn").addEventListener("click", () => {
+    animateCard("spin-left");
+});
