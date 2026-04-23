@@ -441,18 +441,19 @@ input, select {
     margin-top: 5px;
 }
 
-.checkbox-group input[type="checkbox"] {
-    position: relative;
-    top: 2px;   
-    margin: 0;
-}
-
 .checkbox-group label {
     display: flex;
     align-items: center;
     gap: 8px;
+    font-size: 0.95rem;
 }
 
+.checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    margin-top: 2px;   
+}
 
 .submit-btn-quiz {
     margin-top: 30px;
