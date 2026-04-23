@@ -20,10 +20,54 @@ let index = 0;
 fetch("http://44.200.170.16/api/getHomes.php")
   .then(res => res.json())
   .then(data => {
-    homes = data;
+    const filtered = filterHomes(data);   
+    homes = filtered;
+    index = 0;
     showHome();
   })
   .catch(err => console.error("Fetch error:", err));
+
+  function saveHome(id) {
+    let saved = JSON.parse(localStorage.getItem("savedHomes")) || [];
+
+    if (!saved.includes(id)) {
+        saved.push(id);
+        localStorage.setItem("savedHomes", JSON.stringify(saved));
+    }
+}
+
+  function filterHomes(homes) {
+  const beds = parseInt(localStorage.getItem("beds"));
+  const baths = parseInt(localStorage.getItem("baths"));
+  const priceMin = parseInt(localStorage.getItem("priceMin"));
+  const priceMax = parseInt(localStorage.getItem("priceMax"));
+  const sqftMin = parseInt(localStorage.getItem("sqftMin"));
+  const sqftMax = parseInt(localStorage.getItem("sqftMax"));
+
+  const pool = localStorage.getItem("pool") === "true";
+  const waterfront = localStorage.getItem("waterfront") === "true";
+
+  return homes.filter(home => {
+
+    // Bedrooms
+    if (beds && home.beds < beds) return false;
+
+    // Bathrooms
+    if (baths && home.baths < baths) return false;
+
+    // Price
+    if (home.price < priceMin || home.price > priceMax) return false;
+
+    // Square footage
+    if (home.sqft < sqftMin || home.sqft > sqftMax) return false;
+
+    // Outdoor features
+    if (pool && !home.pool) return false;
+    if (waterfront && !home.waterfront) return false;
+
+    return true;
+  });
+}
 
 // 3. Display the current home
 function showHome() {
@@ -54,7 +98,8 @@ function animateCard(animationClass) {
 }
 // 4. Swipe buttons
 document.getElementById("like-btn").addEventListener("click", () => {
-    animateCard("spin-right");
+    saveHome(homes[index].id);   // ⭐ save the home
+    animateCard("spin-right");   // then swipe
 });
 
 document.getElementById("dislike-btn").addEventListener("click", () => {

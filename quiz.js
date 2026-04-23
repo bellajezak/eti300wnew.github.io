@@ -14,3 +14,12 @@ fetch("http://44.200.170.16/api/saveQuiz.php" , {
 .then(res => res.json())
 .then(data => console.log(data)
 .then(err => console.error(err)));
+
+localStorage.setItem("beds", document.getElementById("beds").value);
+localStorage.setItem("baths", document.getElementById("baths").value);
+
+localStorage.setItem("priceMin", document.getElementById("priceMin").value);
+localStorage.setItem("priceMax", document.getElementById("priceMax").value);
+
+localStorage.setItem("sqftMin", document.getElementById("sqftMin").value);
+localStorage.setItem("sqftMax", document.getElementById("sqftMax").value);
