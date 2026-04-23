@@ -170,6 +170,11 @@ body {
     color: white;
 }
 
+.active-page {
+    color: #006aff;
+    font-weight: 600;
+}
+
 .matching-title {
     text-align: center;
     font-size: 30px;
