@@ -165,7 +165,8 @@ body {
 }
 
 .swipe-container {
-    width: 350px;
+    width: 95%;
+    max-width: 1000px;
     margin: 0 auto;
     text-align: center;
     margin-top: 40px;
