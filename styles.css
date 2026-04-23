@@ -417,7 +417,7 @@ h1-quiz {
 /* --- LABELS ABOVE THE BAR --- */
 .range-values {
     position: absolute;
-    top: -28px; 
+    top: 28px; 
     left: 0;
     width: 100%;
     display: flex;
