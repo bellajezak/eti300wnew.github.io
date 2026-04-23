@@ -370,6 +370,13 @@ h1-quiz {
     border: 1px solid #ddd;
 }
 
+.card-quiz > label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 12px;   /* ⭐ adds clean space under the header */
+    font-size: 1.05rem;
+}
+
 .range-container {
     position: relative;
     width: 280px;
