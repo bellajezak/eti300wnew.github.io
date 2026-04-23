@@ -156,6 +156,20 @@ body {
     display: block;
 }
 
+.sign-in-btn-match {
+    background-color: rgb(43, 43, 242);
+    color: white;
+    padding: 6px 14px;
+    margin-left: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.sign-in-btn-match:hover {
+    background-color: darkblue;
+    color: white;
+}
+
 .matching-title {
     text-align: center;
     font-size: 30px;
