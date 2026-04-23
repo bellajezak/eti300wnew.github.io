@@ -84,7 +84,7 @@ body {
 .matching-bubble-up {
     position: absolute;
     top: 42px;
-    right: 60px;
+    right: 85px;
     background: #006aff;
     color: white;
     padding: 6px 10px;
@@ -103,9 +103,8 @@ body {
 .matching-bubble-up::after {
     content: "";
     position: absolute;
-    top: -8px; /* ⭐ arrow above bubble */
-    right: 50%; /* ⭐ center arrow */
-    transform: translateX(50%);
+    top: -8px;              /* pointer ABOVE bubble */
+    right: 20px;            /* adjust to point at the link */
     border-width: 8px;
     border-style: solid;
     border-color: transparent transparent #006aff transparent;
