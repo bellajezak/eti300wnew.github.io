@@ -17,7 +17,7 @@ let homes = [];
 let index = 0;
 
 // 2. Fetch homes from backend
-fetch("http://35.175.212.12/api/getHomes.php")
+fetch("http://44.200.170.16/api/getHomes.php")
   .then(res => res.json())
   .then(data => {
     homes = data;
@@ -32,7 +32,9 @@ function showHome() {
   document.getElementById("home-address").textContent = home.address;
   document.getElementById("home-price").textContent =
     "$" + Number(home.price).toLocaleString();
-
+  document.getElementById("home-beds").textContent = home.beds;
+  document.getElementById("home-baths").textContent = home.baths;
+  document.getElementById("home-location").textContent = `${home.city}, ${home.state} ${home.zip_code}`;
   // Use your hard-coded image
   document.getElementById("home-image").src = hardcodedImages[home.id];
 }

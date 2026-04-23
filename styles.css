@@ -160,7 +160,8 @@ body {
     text-align: center;
     font-size: 30px;
     margin-top: 20px;
-    font: open sans, sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
 }
 
 .swipe-container {
@@ -172,18 +173,49 @@ body {
 
 .card {
     width: 100%;
-    height: 350px;
-    padding: 15px;
-    border-radius: 12px;
-    background: white;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    padding-bottom: 10px;
 }
 
-.card img {
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.18);
+}
+
+#home-image {
     width: 100%;
-    height: 150px;
+    height: 260px;
     object-fit: cover;
-    border-radius: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+#home-address {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 16px 20px 4px;
+}
+
+#home-price {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #0074e4;
+    margin: 0 20px 12px;
+}
+
+.home-details {
+    padding: 0 20px 16px;
+    font-size: 1rem;
+    color: #444;
+    text-align: left;
+}
+
+.detail-item {
+    margin: 4px 0;
 }
 
 .buttons {
@@ -193,17 +225,21 @@ body {
 }
 
 .buttons button {
-    font-size: 28px;
-    padding: 10px 20px;
+    width: 70px;
+    height: 70px;
+    background: #fff;
     border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    background: #eee;
-    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: transform 0.2s ease;
+    border: 1px solid #eee;
+    font-size: 28px;
 }
 
 .buttons button:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 body-quiz {
