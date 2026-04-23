@@ -83,27 +83,29 @@ body {
 
 .matching-bubble-up {
     position: absolute;
-    top: 42px;              /* sits below the link */
-    right: 80px;               /* aligns under Home Matching */
+    top: 42px;
+    right: 60px;
     background: #006aff;
     color: white;
-    padding: 6px 10px;      /* smaller */
+    padding: 6px 10px;
     border-radius: 10px;
-    font-size: 0.75rem;     /* smaller text */
+    font-size: 0.75rem;
     font-weight: 600;
     line-height: 1.2;
-    width: max-content;     /* shrink to content */
-    max-width: 140px;       /* prevents it from getting too wide */
+    width: max-content;
+    max-width: 140px;
     text-align: center;
-    z-index: 999;           /* overlays hero */
+    z-index: 999;
     pointer-events: none;
+    overflow: visible;
 }
 
 .matching-bubble-up::after {
     content: "";
     position: absolute;
-    top: -8px;              /* pointer ABOVE bubble */
-    right: 20px;            /* adjust to point at the link */
+    top: -8px; /* ⭐ arrow above bubble */
+    right: 50%; /* ⭐ center arrow */
+    transform: translateX(50%);
     border-width: 8px;
     border-style: solid;
     border-color: transparent transparent #006aff transparent;
