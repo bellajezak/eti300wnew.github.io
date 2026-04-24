@@ -118,32 +118,9 @@
     </div>
     <nav>
         <a href="home-matching.html" class="nav-link">
-    <button class="submit-btn-quiz" onclick="submitQuiz()">Submit Preferences</button>
+    <button id="submitQuiz">See Matches</button>
 
 <script>
-function submitQuiz() {
-    const data = {
-        budget_max: document.querySelector("input[type='number'][placeholder='e.g., 450000']").value,
-        beds_min: document.querySelector("select").value,
-        baths_min: document.querySelectorAll("select")[1].value,
-        preferred_zip: document.querySelector("input[type='text']").value,
-        preferred_city: "State College"
-    };
-
-    fetch("http://34.231.21.120/api/quiz.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    })
-    .then(res => res.json())
-    .then(res => {
-        console.log("Quiz saved:", res);
-        window.location.href = "home-matching.html";
-    })
-    .catch(err => console.error(err));
-}
 </script>
         </a>
     </nav>
