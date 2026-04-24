@@ -15,6 +15,13 @@ fetch("http://34.231.21.120/api/saveQuiz.php" , {
 .then(data => console.log(data)
 .then(err => console.error(err)));
 
+console.log("Beds:", localStorage.getItem("beds"));
+console.log("Baths:", localStorage.getItem("baths"));
+console.log("PriceMin:", localStorage.getItem("priceMin"));
+console.log("PriceMax:", localStorage.getItem("priceMax"));
+console.log("SqftMin:", localStorage.getItem("sqftMin"));
+console.log("SqftMax:", localStorage.getItem("sqftMax"));
+
 localStorage.setItem("beds", document.getElementById("beds").value);
 localStorage.setItem("baths", document.getElementById("baths").value);
 
