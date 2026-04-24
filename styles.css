@@ -498,3 +498,9 @@ input, select {
     border-radius: 8px;
     margin-bottom: 10px;
 }
+
+.header a.active {
+    color: #006aff;      /* Zillow blue */
+    font-weight: 600;
+}
+
