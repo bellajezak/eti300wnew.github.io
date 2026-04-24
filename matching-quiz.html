@@ -173,4 +173,21 @@
         }
         sqftMaxValue.textContent = sqftMax.value + " sq ft";
     };
+    document.getElementById("submitQuiz").addEventListener("click", () => {
+
+    localStorage.setItem("beds", document.getElementById("beds").value);
+    localStorage.setItem("baths", document.getElementById("baths").value);
+
+    localStorage.setItem("priceMin", document.getElementById("priceMin").value);
+    localStorage.setItem("priceMax", document.getElementById("priceMax").value);
+
+    localStorage.setItem("sqftMin", document.getElementById("sqftMin").value);
+    localStorage.setItem("sqftMax", document.getElementById("sqftMax").value);
+
+    // Debug
+    console.log("Saved beds:", localStorage.getItem("beds"));
+    console.log("Saved baths:", localStorage.getItem("baths"));
+
+    window.location.href = "home-matching.html";
+});
 </script>
