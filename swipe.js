@@ -11,13 +11,36 @@ const hardcodedImages = {
   15: "images/swipe-11.png",
   16: "images/swipe-12.png",
   17: "images/test-image-listing.png"
+  18: "images/swipe-14.png",
+  19: "images/swipe-15.png",
+  20: "images/swipe-16.png",
+  21: "images/swipe-17.png",
+  22: "images/swipe-18.png",
+  23: "images/swipe-19.png",
+  24: "images/swipe-20.png",
+  25: "images/swipe-21.png",
+  26: "images/swipe-22.png",
+  27: "images/swipe-23.png",
+  28: "images/swipe-24.png",
+  29: "images/swipe-25.png",
+  30: "images/swipe-26.png",
+  31: "images/swipe-27.png",
+  32: "images/swipe-28.png",
+  33: "images/swipe-29.png",
+  34: "images/swipe-30.png",
+  35: "images/swipe-31.png",
+  36: "images/swipe-32.png",
+  37: "images/swipe-33.png",
+  38: "images/swipe-34.png",
+  39: "images/swipe-35.png",
+  40: "images/swipe-36.png",
 };
 
 let homes = [];
 let index = 0;
 
 // 2. Fetch homes from backend
-fetch("http://44.200.170.16/api/getHomes.php")
+fetch("http://34.231.21.120/api/getHomes.php")
   .then(res => res.json())
   .then(data => {
     const filtered = filterHomes(data);   

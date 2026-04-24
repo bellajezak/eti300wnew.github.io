@@ -1,4 +1,4 @@
-fetch("http://44.200.170.16/api/getHomes.php")
+fetch("http://34.231.21.120/api/getHomes.php")
   .then(res => res.json())
   .then(allHomes => {
       const savedIds = JSON.parse(localStorage.getItem("savedHomes")) || [];
