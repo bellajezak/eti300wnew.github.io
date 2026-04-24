@@ -10,7 +10,7 @@ const hardcodedImages = {
   14: "images/swipe-10.png",
   15: "images/swipe-11.png",
   16: "images/swipe-12.png",
-  17: "images/test-image-listing.png"
+  17: "images/test-image-listing.png",
   18: "images/swipe-14.png",
   19: "images/swipe-15.png",
   20: "images/swipe-16.png",
