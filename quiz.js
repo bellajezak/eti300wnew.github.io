@@ -1,20 +1,3 @@
-fetch("http://34.231.21.120/api/saveQuiz.php" , {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-        budget_max: 500000,
-        beds_min: 3,
-        baths_min: 2,
-        preferred_city: "State College",
-        preferred_zip: "16801"
-    })
-})
-.then(res => res.json())
-.then(data => console.log(data)
-.then(err => console.error(err)));
-
 console.log("Beds:", localStorage.getItem("beds"));
 console.log("Baths:", localStorage.getItem("baths"));
 console.log("PriceMin:", localStorage.getItem("priceMin"));
@@ -22,11 +5,15 @@ console.log("PriceMax:", localStorage.getItem("priceMax"));
 console.log("SqftMin:", localStorage.getItem("sqftMin"));
 console.log("SqftMax:", localStorage.getItem("sqftMax"));
 
-localStorage.setItem("beds", document.getElementById("beds").value);
-localStorage.setItem("baths", document.getElementById("baths").value);
+document.getElementById("submitQuiz").addEventListener("click", () => {
 
-localStorage.setItem("priceMin", document.getElementById("priceMin").value);
-localStorage.setItem("priceMax", document.getElementById("priceMax").value);
+    // Save quiz values
+    localStorage.setItem("beds", document.getElementById("beds").value);
+    localStorage.setItem("baths", document.getElementById("baths").value);
 
-localStorage.setItem("sqftMin", document.getElementById("sqftMin").value);
-localStorage.setItem("sqftMax", document.getElementById("sqftMax").value);
+    localStorage.setItem("priceMin", document.getElementById("priceMin").value);
+    localStorage.setItem("priceMax", document.getElementById("priceMax").value);
+
+    localStorage.setItem("sqftMin", document.getElementById("sqftMin").value);
+    localStorage.setItem("sqftMax", document.getElementById("sqftMax").value);
+});
